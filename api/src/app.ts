@@ -36,7 +36,7 @@ dotenv.config({
     })
 
 
-    app.listen(process.env.APP_PORT || 5001, () => console.log(`App Running`));
+    app.listen(process.env.APP_PORT || 5000, () => console.log(`App Running`));
   } catch (e) {
     console.log(e)
   }
