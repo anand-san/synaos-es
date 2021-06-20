@@ -5,5 +5,5 @@ COPY package.json /usr/src/app/
 RUN npm install
 COPY . /usr/src/app
 RUN npm run build
-EXPOSE 5000
+EXPOSE 80
 CMD npm run start
