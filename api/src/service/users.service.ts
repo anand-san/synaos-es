@@ -16,9 +16,9 @@ export const createUser = async (user:IUserModel) => {
     }
 }
 
-export const updateUser = async (user:IUserModel) => {
+export const updateUser = async (userUUID: string, user:IUserModel) => {
     try{
-        return await UserModel.updateOne(user)
+        return await UserModel.updateOne({uuid: userUUID}, user)
     }catch(e){
         throw e
     }
