@@ -28,3 +28,12 @@ export const updateUser = async (req: Request, res: Response) => {
         res.send(responseMessage.message(500, e.message || e))
     }
 }
+
+export const deleteUser = async (req: Request, res: Response) => {
+    try {
+        let users = await userService.deleteUser(req.body.uuid as string)
+        res.send(responseMessage.message(200, users))
+    } catch (e) {
+        res.send(responseMessage.message(500, e.message || e))
+    }
+}
