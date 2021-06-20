@@ -10,7 +10,6 @@ export interface IUserModel extends Document {
 }
 
 const userSchema:Schema = new Schema({
-    _id: false,
     uuid: {
         type: String,
         unique: true,
