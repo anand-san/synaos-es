@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import express, { NextFunction, Request, Response } from 'express';
+import mongoose from "mongoose"
 import { userRouter } from "./routes"
 import { responseMessage } from './utils/responseUtils';
 
@@ -9,6 +10,12 @@ dotenv.config({
 
 (async () => {
   try {
+    await mongoose.connect(process.env.MONGO_CONNECTION_STRING, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true
+    })
+
     const app = express();
 
     //Parse request body middleware
