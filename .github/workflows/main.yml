@@ -65,6 +65,9 @@ jobs:
         # push it to ECR so that it can
         # be deployed to ECS.
         cd api
+        touch .env
+        echo MONGO_CONNECTION_STRING=${{ secrets.MONGO_CONNECTION_STRING }} >> .env
+        echo APP_PORT=${{ secrets.APP_PORT }} >> .env
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
