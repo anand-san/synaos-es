@@ -1,16 +1,22 @@
 import dotenv from 'dotenv';
-import express from 'express';
+import express, { Request, Response } from 'express';
+import { userRouter } from "./routes"
 
 dotenv.config({
   path: '.env'
 });
 
-class Server {
-  public app = express();
-}
+(async () => {
+  try {
+    const app = express();
 
-const server = new Server();
+    userRouter(app);
 
-((port = process.env.APP_PORT || 5000) => {
-  server.app.listen(port, () => console.log(`> Listening on port ${port}`));
-})();
+    ((port = process.env.APP_PORT || 5001) => {
+      app.listen(port, () => console.log(`> Listening on port ${port}`));
+    })();
+  } catch (e) {
+    console.log(e)
+  }
+
+})()
