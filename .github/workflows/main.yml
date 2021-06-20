@@ -73,7 +73,7 @@ jobs:
       id: task-def
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
-        task-definition: ecs-task-definition.json
+        task-definition: api/ecs-task-definition.json
         container-name: synaos-es
         image: ${{ steps.build-image.outputs.image }}
 
