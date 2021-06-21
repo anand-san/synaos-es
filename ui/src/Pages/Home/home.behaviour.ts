@@ -1,18 +1,33 @@
 import React from "react"
 import { getRandomUser } from "../../api/request-layer"
-const HomeBehaviour = () => {
-    const [userDetails, setUserDetails] = React.useState([])
-    const [isLoading, setIsLoading] = React.useState(true)
-    const [isError, setIsError] = React.useState(false)
+import { useStyles } from "./home.styles"
+import { UserPropTypes } from "./home.types"
+
+export const HomeBehaviour = () => {
+    const classes = useStyles()
+    const [userDetails, setUserDetails] = React.useState<UserPropTypes[]>([])
+    const [isLoading, setIsLoading] = React.useState<Boolean>(true)
+    const [isError, setIsError] = React.useState<Boolean>(false)
+
     React.useEffect(() => {
         getRandomUser().then(response => {
-            setUserDetails(response.data.results)
-        }).catch(setIsError).finally(() => {
+            let result = response.data.results[0]
+            console.log(result)
+            let user:UserPropTypes = {
+                name: result.name.first,
+                uuid: result.login.uuid,
+                gender: result.gender,
+                dob: result.dob.date,
+                phone: result.registered.phone,
+                picture: result.picture.medium
+            }
+            setUserDetails([user])
+        }).catch(e => {
+            setIsError(e.message || e)
+        }).finally(() => {
             setIsLoading(false)
         })
     }, [])
 
-    return { userDetails, isLoading, isError }
+    return { userDetails, isLoading, isError, classes }
 }
-
-export { HomeBehaviour }
