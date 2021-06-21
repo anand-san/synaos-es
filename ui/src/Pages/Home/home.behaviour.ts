@@ -18,7 +18,7 @@ export const HomeBehaviour = () => {
                 uuid: result.login.uuid,
                 gender: result.gender,
                 dob: result.dob.date,
-                phone: result.cell,
+                phone: result.cell && result.cell.replace(/-|\(|\)|" "/g, ""),
                 picture: result.picture.large
             }
             setUserDetails(user)
