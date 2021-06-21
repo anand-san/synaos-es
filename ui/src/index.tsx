@@ -1,20 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import {routes, RouteProps} from "./routes"
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { routes, RouteProps } from "./routes";
+import ErrorBoundary from "./Components/ErrorBoundary";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Switch>
-        {routes.map((el: RouteProps) => <Route key={el.name} exact={el.path==="/"} path={el.path} component={el.component} />)}
-        <Redirect from="*" to="/error" />
-      </Switch>
-    </BrowserRouter>
+    <ErrorBoundary>
+      <BrowserRouter>
+        <Switch>
+          {routes.map((el: RouteProps) => (
+            <Route
+              key={el.name}
+              exact={el.path === "/"}
+              path={el.path}
+              component={el.component}
+            />
+          ))}
+          <Redirect from="*" to="/error" />
+        </Switch>
+      </BrowserRouter>
+    </ErrorBoundary>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
