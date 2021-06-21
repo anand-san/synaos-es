@@ -1,5 +1,6 @@
 import React from "react"
-import HomePage from "./Pages/Home"
+import RandomUser from "./Pages/RandomUser"
+import SavedUsers from "./Pages/SavedUsers"
 
 export type RouteProps = {
     component: React.ComponentType<any>,
@@ -9,8 +10,12 @@ export type RouteProps = {
 
 export const routes: RouteProps[] = [
     {
-        component: HomePage,
-        path: "/",
-        name: "Capture Snapshot"
+        component: RandomUser,
+        path: "/randomuser",
+        name: "Random Users"
+    },{
+        component: SavedUsers,
+        path: "/savedusers",
+        name: "Saved Users"
     }
 ]
