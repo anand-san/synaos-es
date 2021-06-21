@@ -5,7 +5,7 @@ interface IResponse {
 }
 
 export const responseMessage = {
-    message: (statusCode: number = 200, message: any = "success"): IResponse => {
+    message: (statusCode: number = 200, message: any = ""): IResponse => {
         return {
             statusCode, status: statusCode === 200 ? "Success" : "Error", message
         }
