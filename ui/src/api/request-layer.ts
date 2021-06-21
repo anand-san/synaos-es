@@ -1,5 +1,5 @@
 import axios from "axios";
-import { UserPropTypes } from "../Pages/Home/home.types";
+import { UserPropTypes } from "../Pages/RandomUser/randomuser.types";
 const AXIOS_TIMEOUT = 15000;
 
 export let api = axios.create({

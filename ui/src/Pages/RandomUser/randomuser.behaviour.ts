@@ -1,9 +1,9 @@
 import React from "react"
 import { getRandomUser } from "../../api/request-layer"
-import { useStyles } from "./home.styles"
-import { UserPropTypes } from "./home.types"
+import { useStyles } from "./randomuser.styles"
+import { UserPropTypes } from "./randomuser.types"
 
-export const HomeBehaviour = () => {
+export const RandomUserBehaviour = () => {
     const classes = useStyles()
     const [userDetails, setUserDetails] = React.useState<UserPropTypes | unknown>(null)
     const [isLoading, setIsLoading] = React.useState<Boolean>(true)

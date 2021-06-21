@@ -1,8 +1,8 @@
-import { HomeBehaviour } from './home.behaviour'
+import { RandomUserBehaviour } from './randomuser.behaviour'
 import UserCard from '../../Components/UserCard'
-import { UserPropTypes } from './home.types'
-export default function HomeView() {
-    const {userDetails, isError, isLoading, classes} = HomeBehaviour()
+import { UserPropTypes } from './randomuser.types'
+export default function RandomUserView() {
+    const {userDetails, isError, isLoading, classes} = RandomUserBehaviour()
 
     if(isError)
         return <div>{isError}</div>

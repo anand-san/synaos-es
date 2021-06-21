@@ -1,4 +1,4 @@
-import { UserPropTypes } from "../../Pages/Home/home.types";
+import { UserPropTypes } from "../../Pages/RandomUser/randomuser.types";
 import Paper from "@material-ui/core/Paper";
 import { UserCardBehaviour } from "./usercard.behaviour";
 export interface ICardProps {
