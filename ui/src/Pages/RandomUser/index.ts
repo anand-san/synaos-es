@@ -1,3 +1,3 @@
-import RandomUserView from "./randomuser.component";
+import RandomUser from "./randomuser.component";
 
-export default RandomUserView
+export default RandomUser

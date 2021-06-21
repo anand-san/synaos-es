@@ -1,7 +1,7 @@
 import { RandomUserBehaviour } from './randomuser.behaviour'
 import UserCard from '../../Components/UserCard'
 import { UserPropTypes } from './randomuser.types'
-export default function RandomUserView() {
+export default function RandomUser() {
     const {userDetails, isError, isLoading, classes} = RandomUserBehaviour()
 
     if(isError)
