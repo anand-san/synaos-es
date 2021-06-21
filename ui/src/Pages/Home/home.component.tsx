@@ -1,5 +1,6 @@
 import { HomeBehaviour } from './home.behaviour'
 import UserCard from '../../Components/UserCard'
+import { UserPropTypes } from './home.types'
 export default function HomeView() {
     const {userDetails, isError, isLoading, classes} = HomeBehaviour()
 
@@ -8,7 +9,7 @@ export default function HomeView() {
     return (
         <div className={classes.root}>
             <div className={classes.main}>
-            {isLoading ? "Loading" : <UserCard data={userDetails}/>}
+            {isLoading ? "Loading" : <UserCard data={userDetails as UserPropTypes}/>}
             </div>
         </div>
     )
