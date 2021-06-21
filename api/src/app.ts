@@ -5,6 +5,7 @@ import cors from "cors"
 const app = express();
 //Parse request body middleware
 app.use(express.json())
+app.use(cors())
 
 //Use Routes
 userRouter(app);
@@ -14,7 +15,6 @@ app.get('*', function (req, res) {
   res.status(404).send(responseMessage.message(404, "Invalid Endpoint"));
 });
 
-app.use(cors())
 
 //Common error handler middleware
 app.use(function errorHandler(err: Error, req: Request, res: Response, next: NextFunction) {
