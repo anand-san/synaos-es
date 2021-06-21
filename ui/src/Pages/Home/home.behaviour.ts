@@ -5,7 +5,7 @@ import { UserPropTypes } from "./home.types"
 
 export const HomeBehaviour = () => {
     const classes = useStyles()
-    const [userDetails, setUserDetails] = React.useState<UserPropTypes[]>([])
+    const [userDetails, setUserDetails] = React.useState<UserPropTypes | unknown>(null)
     const [isLoading, setIsLoading] = React.useState<Boolean>(true)
     const [isError, setIsError] = React.useState<Boolean>(false)
 
@@ -18,10 +18,10 @@ export const HomeBehaviour = () => {
                 uuid: result.login.uuid,
                 gender: result.gender,
                 dob: result.dob.date,
-                phone: result.registered.phone,
-                picture: result.picture.medium
+                phone: result.cell,
+                picture: result.picture.large
             }
-            setUserDetails([user])
+            setUserDetails(user)
         }).catch(e => {
             setIsError(e.message || e)
         }).finally(() => {
