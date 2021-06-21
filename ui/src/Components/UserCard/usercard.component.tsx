@@ -6,7 +6,7 @@ export interface ICardProps {
 }
 
 export default function UserCard(props: ICardProps) {
-  const { classes } = UserCardBehaviour();
+  const { classes, backendApiStatus } = UserCardBehaviour(props);
   const { data: user } = props;
   return (
     <div>
@@ -24,8 +24,8 @@ export default function UserCard(props: ICardProps) {
           <p>Phone: {user.phone}</p>
           <p>Born: {new Date(user.dob as string).toDateString()}</p>
         </div>
-        <div className={classes.dbStatus}>
-            {user.uuid} saved to db
+        <div className={classes.dbStatus} style={{color: backendApiStatus.error ? "red" : "green"}}>
+            {backendApiStatus.error ? "Failed to save" : backendApiStatus.inProgress ? "Saving" : "Saved"}
         </div>
       </Paper>
     </div>
