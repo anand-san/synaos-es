@@ -1,7 +1,7 @@
 import express, { NextFunction, Request, Response } from 'express';
 import { userRouter } from "./routes"
 import { responseMessage } from './utils/responseUtils';
-
+import cors from "cors"
 const app = express();
 //Parse request body middleware
 app.use(express.json())
@@ -13,6 +13,8 @@ userRouter(app);
 app.get('*', function (req, res) {
   res.status(404).send(responseMessage.message(404, "Invalid Endpoint"));
 });
+
+app.use(cors())
 
 //Common error handler middleware
 app.use(function errorHandler(err: Error, req: Request, res: Response, next: NextFunction) {
