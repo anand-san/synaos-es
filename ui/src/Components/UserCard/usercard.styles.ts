@@ -8,6 +8,7 @@ export const useStyles = makeStyles({
         minHeight: "40vh",
         display: "flex",
         flexDirection: "column",
+        justifyContent: "space-around"
     },image: {
         width: "auto",
         borderRadius: "100%"
