@@ -27,9 +27,8 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+    paths:
+      - "api/**"
 
 name: Deploy to Amazon ECS
 
