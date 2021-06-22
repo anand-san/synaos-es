@@ -46,6 +46,8 @@
     ]
   },
   "devDependencies": {
-    "@types/react-router-dom": "^5.1.7"
+    "@babel/preset-react": "^7.14.5",
+    "@types/react-router-dom": "^5.1.7",
+    "ts-jest": "^27.0.3"
   }
 }
