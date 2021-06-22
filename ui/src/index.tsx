@@ -19,7 +19,7 @@ ReactDOM.render(
               component={el.component}
             />
           ))}
-          <Redirect from="*" to="/error" />
+          <Redirect from="*" to="/savedusers" />
         </Switch>
       </BrowserRouter>
     </ErrorBoundary>
