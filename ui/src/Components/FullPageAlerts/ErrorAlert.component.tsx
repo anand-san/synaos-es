@@ -1,3 +1,4 @@
+import React from "react"
 import { useStyles } from "./FullPageAlert.styles";
 import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
