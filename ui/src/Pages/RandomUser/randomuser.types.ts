@@ -4,5 +4,6 @@ export interface UserPropTypes {
     gender?: string,
     dob?: string,
     phone: number,
-    picture?: string
+    picture?: string,
+    tableData?: any
 }
