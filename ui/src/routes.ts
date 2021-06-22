@@ -1,6 +1,7 @@
 import React from "react"
 import RandomUser from "./Pages/RandomUser"
 import SavedUsers from "./Pages/SavedUsers"
+import { ErrorAlert } from "./Components/FullPageAlerts";
 
 export type RouteProps = {
     component: React.ComponentType<any>,
@@ -17,5 +18,9 @@ export const routes: RouteProps[] = [
         component: SavedUsers,
         path: "/savedusers",
         name: "Saved Users"
+    },{
+        component: ErrorAlert,
+        path: "/error",
+        name: "Error"
     }
 ]
