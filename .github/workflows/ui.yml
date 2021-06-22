@@ -21,14 +21,11 @@ jobs:
       with:
         node-version: 13.x
     
-    - name: Enter UI dir
-      run: cd ui
-      
     - name: Install NPM packages
-      run: npm ci
+      run: cd ui && npm ci
     
     - name: Build project
-      run: npm run build
+      run: cd ui && npm run build
     
     # - name: Run tests
     #   run: npm run test
@@ -37,7 +34,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: production-files
-        path: ./build
+        path: ui/build
   
   deploy:
     name: Deploy
