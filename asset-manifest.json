@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/synaos-es/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/synaos-es/static/js/main.4cde2f9e.chunk.js",
-    "main.js.map": "/synaos-es/static/js/main.4cde2f9e.chunk.js.map",
+    "main.js": "/synaos-es/static/js/main.10b9e023.chunk.js",
+    "main.js.map": "/synaos-es/static/js/main.10b9e023.chunk.js.map",
     "runtime-main.js": "/synaos-es/static/js/runtime-main.ad147a25.js",
     "runtime-main.js.map": "/synaos-es/static/js/runtime-main.ad147a25.js.map",
     "static/js/2.1cd9e96b.chunk.js": "/synaos-es/static/js/2.1cd9e96b.chunk.js",
@@ -26,6 +26,6 @@
     "static/js/runtime-main.ad147a25.js",
     "static/js/2.1cd9e96b.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.4cde2f9e.chunk.js"
+    "static/js/main.10b9e023.chunk.js"
   ]
 }
