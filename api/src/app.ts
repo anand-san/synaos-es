@@ -8,7 +8,7 @@ app.use(express.json())
 app.use(cors())
 
 //Use Routes
-userRouter(app);
+app.use("/", userRouter)
 
 //Handle invalid route error
 app.get('*', function (req, res) {

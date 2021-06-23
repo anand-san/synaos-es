@@ -1,9 +1,9 @@
-import {Router} from "express"
+import { Router } from "express"
 import * as usersController from "../controller/users.controller"
 
-export const userRouter = (app: Router) => {
-    app.get("/getUsers", usersController.getUsers)
-    app.post("/createUser", usersController.createUser)
-    app.post("/updateUser", usersController.updateUser)
-    app.post("/deleteUser", usersController.deleteUser)
-}
+export const userRouter = Router()
+
+userRouter.get("/getUsers", usersController.getUsers)
+userRouter.post("/createUser", usersController.createUser)
+userRouter.post("/updateUser", usersController.updateUser)
+userRouter.post("/deleteUser", usersController.deleteUser)
