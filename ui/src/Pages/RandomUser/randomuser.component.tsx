@@ -5,10 +5,10 @@ export default function RandomUser() {
     const {userDetails, isError, isLoading, classes} = RandomUserBehaviour()
 
     if(isError)
-        return <div>{isError}</div>
+        return <div data-testid="random_user_error">{isError}</div>
     return (
         <div className={classes.root}>
-            <div className={classes.main}>
+            <div className={classes.main} data-testid="random_user">
             {isLoading ? "Loading" : <UserCard data={userDetails as UserPropTypes}/>}
             </div>
         </div>
