@@ -12,7 +12,6 @@ export const RandomUserBehaviour = () => {
     React.useEffect(() => {
         getRandomUser().then(response => {
             let result = response.data.results[0]
-            console.log(result)
             let user:UserPropTypes = {
                 name: result.name.first,
                 uuid: result.login.uuid,
