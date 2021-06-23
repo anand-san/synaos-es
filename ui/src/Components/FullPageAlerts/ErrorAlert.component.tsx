@@ -8,7 +8,7 @@ export default function ErrorAlert() {
   const history = useHistory();
   return (
     <div className={classes.root}>
-      <img src="/images/error.svg" alt="success" />
+      <img src="/images/error.svg" alt="error_svg" />
       <p>Oops! Something went wrong</p>
       <div className={classes.navButtons}>
           <Button variant="outlined" onClick={() => history.push("/savedusers")}>
