@@ -1,15 +1,9 @@
 import axios from "axios";
 import { UserPropTypes } from "../Pages/RandomUser/randomuser.types";
-const AXIOS_TIMEOUT = 15000;
-
-export let api = axios.create({
-    timeout: AXIOS_TIMEOUT,
-    headers: { "Content-Type": "application/json" },
-});
 
 export const getRandomUser = async () => {
     try {
-        return await api({
+        return await axios({
             baseURL: "https://randomuser.me",
             method: "GET",
             url: "api",
@@ -21,7 +15,7 @@ export const getRandomUser = async () => {
 
 export const getUsers = async () => {
     try {
-        return await api({
+        return await axios({
             baseURL: process.env.REACT_APP_API_BASE,
             method: "GET",
             url: "getUsers",
@@ -33,7 +27,7 @@ export const getUsers = async () => {
 
 export const createUser = async (payload: UserPropTypes) => {
     try {
-        return await api({
+        return await axios({
             baseURL: process.env.REACT_APP_API_BASE,
             method: "post",
             url: "createUser",
@@ -46,7 +40,7 @@ export const createUser = async (payload: UserPropTypes) => {
 
 export const updateUser = async (payload: UserPropTypes) => {
     try {
-        return await api({
+        return await axios({
             baseURL: process.env.REACT_APP_API_BASE,
             method: "post",
             url: "updateUser",
@@ -59,7 +53,7 @@ export const updateUser = async (payload: UserPropTypes) => {
 
 export const deleteUser = async (uuid: string) => {
     try {
-        return await api({
+        return await axios({
             baseURL: process.env.REACT_APP_API_BASE,
             method: "post",
             url: "deleteUser",
