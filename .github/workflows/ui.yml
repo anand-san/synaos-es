@@ -24,11 +24,11 @@ jobs:
     - name: Install NPM packages
       run: cd ui && npm ci
     
-    - name: Build project
-      run: cd ui && npm run build
-    
     - name: Create ENV
       run: cd ui && touch .env && echo REACT_APP_API_BASE=${{ secrets.REACT_APP_API_BASE }} >> .env
+
+    - name: Build project
+      run: cd ui && npm run build
 
     - name: Upload production-ready build files
       uses: actions/upload-artifact@v2
