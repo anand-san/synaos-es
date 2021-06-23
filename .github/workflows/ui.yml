@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-    # paths:
-    #   - "ui/**"
+    paths:
+      - "ui/**"
 
 jobs:
   build:
@@ -27,8 +27,8 @@ jobs:
     - name: Build project
       run: cd ui && npm run build
     
-    # - name: Run tests
-    #   run: npm run test
+    - name: Create ENV
+      run: cd ui && touch .env && echo REACT_APP_API_BASE=${{ secrets.REACT_APP_API_BASE }} >> .env
 
     - name: Upload production-ready build files
       uses: actions/upload-artifact@v2
