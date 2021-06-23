@@ -24,7 +24,7 @@ export default function UserCard(props: ICardProps) {
           <p data-testid="user_phone">Phone: {user.phone}</p>
           <p data-testid="user_born">Born: {user.dob ? new Date(user.dob as string).toDateString() : "NA"}</p>
         </div>
-        <div className={classes.dbStatus} style={{color: backendApiStatus.error ? "red" : "green"}}>
+        <div className={classes.dbStatus} style={{color: backendApiStatus.error ? "red" : "green"}} data-testid="backend_status">
             {backendApiStatus.error ? "Failed to save" : backendApiStatus.inProgress ? "Saving" : "Saved"}
         </div>
       </Paper>
