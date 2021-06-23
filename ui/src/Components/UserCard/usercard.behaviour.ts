@@ -16,8 +16,8 @@ export const UserCardBehaviour = (props: ICardProps) => {
             inProgress: false,
             error: false
         }
-        createUser(props.data).then(resposne => {
-            if(resposne.data.status === "Error")
+        createUser(props.data).then(response => {
+            if(response.data.status === "Error")
                 currentApiStatus.error= true
         }).catch(e => {
             currentApiStatus.error= true
